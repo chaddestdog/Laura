@@ -12,9 +12,11 @@ local Tabs = {main = Library:addTab("main", ""), visuals = Library:addTab("visua
     main ={Silentaim ={Enabled = false,Fov = {Enabled= false,Radius = 0}};Charactermods ={Jumpshoot = false,Noslowdown = false,Customhitsound = false};Hitboxexpander = {Enabled = false,Cancollide = true,Size = 1,Transparency = 0.5,Forcehead = false}};
     visuals ={Visualaffects ={Hittracers ={Color = Color3.fromRGB(255, 255, 255),Lifetime = 0};};Esp ={Cornerboxes = false,Maxdistance = 0,bar = false,Name = false}};
     misc ={Weaponmods ={Nospread = false,Norecoil = false,Nospread = false};Speedhack ={Enabled = false,Min = 0,Max = 1,Acceleration = 0};Silentfarm ={Enabled = false,Min = 0,Max = 1};Idk ={Grab ={Enabled = false};Deposit ={Enabled = false}};Skinchanger = {Enabled = false}};
-    world ={}
+    world ={},
+    Loaded = false
 };
-repeat task.wait() until (_G.VisualsWTFCallback )
+repeat task.wait() until _G.VisualsWTFCallback
+repeat task.wait() until _G.VisualsWTFCallback == true
 VisualsWTFConfig = _G.VisualsWTFConfig;VisualsWTFCallback = _G.VisualsWTFCallback;
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 local Silent_aim_Tab = Tabs.main:createGroup('left', 'Silent Aim') do
@@ -36,5 +38,5 @@ local Visualeffects = Tabs.visuals:createGroup('right', 'Visuals Affects') do
     
 end;
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+VisualsWTFConfig.Loaded = true
 warn("[Visuals.wtf] - library loadded")
