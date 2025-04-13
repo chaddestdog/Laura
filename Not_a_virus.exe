@@ -16,7 +16,7 @@ local Tabs = {main = Library:addTab("main", ""), visuals = Library:addTab("visua
     Loaded = false
 };
 repeat task.wait() until _G.VisualsWTFCallback
-repeat task.wait() until _G.VisualsWTFCallback == true
+repeat task.wait() until _G.VisualsWTFCallback.Loaded == true
 VisualsWTFConfig = _G.VisualsWTFConfig;VisualsWTFCallback = _G.VisualsWTFCallback;
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 local Silent_aim_Tab = Tabs.main:createGroup('left', 'Silent Aim') do
