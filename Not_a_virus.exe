@@ -15,7 +15,7 @@ local Tabs = {main = Library:addTab("main", ""), visuals = Library:addTab("visua
     world ={}
 };
 repeat task.wait() until _G.VisualsWTFCallback
-repeat task.wait() until _G.VisualsWTFCallback.Loaded
+--repeat task.wait() until _G.VisualsWTFCallback.Loaded
 VisualsWTFConfig = _G.VisualsWTFConfig;VisualsWTFCallback = _G.VisualsWTFCallback;
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
