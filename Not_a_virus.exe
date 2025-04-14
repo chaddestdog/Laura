@@ -1,12 +1,3 @@
---[[ READ ME!!! 
-    Config is Ui to logic
-    Callback is logic to Ui
-    
-    this is the ui 🙄 
-    this gets obfed with moonsec -- more optimized and this stuff doesn't matter
-    
-]]
-
 local Library = loadstring(request({Url='https://raw.githubusercontent.com/demonityV2/ee/refs/heads/main/ds.lua'}).Body)();
 local Tabs = {main = Library:addTab("main", ""), visuals = Library:addTab("visuals", ""), misc = Library:addTab("misc", ""),  world = Library:addTab("world", ""), settings = Library:addTab("settings", "")};_G.VisualsWTFConfig ={
     main ={Silentaim ={Enabled = false,Fov = {Enabled= false,Radius = 0}};Charactermods ={Jumpshoot = false,Noslowdown = false,Customhitsound = false};Hitboxexpander = {Enabled = false,Cancollide = true,Size = 1,Transparency = 0.5,Forcehead = false}};
@@ -14,11 +5,9 @@ local Tabs = {main = Library:addTab("main", ""), visuals = Library:addTab("visua
     misc ={Weaponmods ={Nospread = false,Norecoil = false,Nospread = false};Speedhack ={Enabled = false,Min = 0,Max = 1,Acceleration = 0};Silentfarm ={Enabled = false,Min = 0,Max = 1};Idk ={Grab ={Enabled = false};Deposit ={Enabled = false}};Skinchanger = {Enabled = false}};
     world ={},
     Loaded = false
-};
-repeat task.wait() until _G.VisualsWTFCallback
-repeat task.wait() until _G.VisualsWTFCallback.Loaded == true
-VisualsWTFConfig = _G.VisualsWTFConfig;VisualsWTFCallback = _G.VisualsWTFCallback;
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+};repeat task.wait() until _G.VisualsWTFCallback and _G.VisualsWTFCallback.Loaded;
+VisualsWTFConfig, VisualsWTFCallback = _G.VisualsWTFConfig, _G.VisualsWTFCallback;
+-- [
 local Silent_aim_Tab = Tabs.main:createGroup('left', 'Silent Aim') do
     Silent_aim_Tab:addToggle({text = "Silent aim",default = false,flag = "Silent_aim_Enabled",callback = function(boolean)
         VisualsWTFConfig.main.Silentaim.Enabled = boolean
@@ -32,11 +21,7 @@ local Silent_aim_Tab = Tabs.main:createGroup('left', 'Silent Aim') do
         VisualsWTFConfig.main.Silentaim.Fov.Radius = number;
     end});
 end;
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-local Visualeffects = Tabs.visuals:createGroup('right', 'Visuals Affects') do
-    
-    
-end;
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-VisualsWTFConfig.Loaded = true
-warn("[Visuals.wtf] - library loadded")
+-- [
+
+
+warn("ui initialized")
