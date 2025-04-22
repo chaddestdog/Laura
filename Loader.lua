@@ -24,7 +24,7 @@ function Lib:CreateWindow(args)
 	local Window = {Current_Tab = nil,UI = {}};
 	------------------------------------------------------------------------
 	-- Gui
-	Window.UI["1"] = Create("ScreenGui", {Parent = gethui(),ZIndexBehavior = Enum.ZIndexBehavior.Global});
+	Window.UI["1"] = Create("ScreenGui", {Parent = game.CoreGui,ZIndexBehavior = Enum.ZIndexBehavior.Global});
 	-- Gui.Window
 	Window.UI["2"] = Create("Frame", {Parent = Window.UI["1"],BorderSizePixel = 1,BackgroundColor3 = Color3.fromRGB(46, 46, 46),AnchorPoint = Vector2.new(0.5, 0.5),Size = UDim2.new(0, 300, 0, 200),Position = UDim2.new(0.5, 0, 0.5, 0),BorderColor3 = Color3.fromRGB(28, 43, 54)});
 	-- Gui.Window.Tabs
